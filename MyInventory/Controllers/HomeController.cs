@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyInventory.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,13 @@ namespace MyInventory.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var model = new Product()
+            {
+                Name = "Upbeat",
+                RetailCost = 180
+            };       
+
+            return View(model);
         }
 
         public ActionResult About()

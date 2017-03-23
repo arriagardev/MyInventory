@@ -14,6 +14,12 @@ namespace MyInventory
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Product",
+                "product/{name}",
+                new { controller = "Product", action = "Index", name=UrlParameter.Optional}
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
